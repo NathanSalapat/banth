@@ -2,26 +2,25 @@ mobs:register_mob("banth:banth", {
 	type = "monster",
 	passive = false,
 	reach = 2,
-	damage = 2,
+	damage = 4,
 	attack_type = "dogfight",
-	hp_min = 12,
-	hp_max = 22,
-	armor = 130,
-	collisionbox = {-0.6, -0.4, -0.6, 0.6, 0.6, 0.6},
+	hp_min = 22,
+	hp_max = 32,
+	armor = 90,
+	collisionbox = {-1.2, -0.8, -1.2, 1.2, 1.2, 1.2},
 	visual = "mesh",
 	mesh = "banth.b3d",
 	textures = {
 		{"banth_color.png"},
 	},
 	blood_texture = "mobs_blood.png",
-	visual_size = {x=8, y=8},
+	visual_size = {x=12, y=12},
 	makes_footstep_sound = true,
 	drops = {
 		{name = "mobs:meat_raw", chance = 1, min = 3, max = 10},
 	},
-	walk_velocity = 1,
+	walk_velocity = 3,
 	run_velocity = 2,
-	jump = true,
 	stepheight = 1.1,
 	water_damage = 0,
 	lava_damage = 2,
@@ -40,6 +39,10 @@ mobs:register_mob("banth:banth", {
 		punch_end = 90,
 
 	},
+	on_rightclick = function(self,clicker)
+		mobs:capture_mob(self, clicker, 0, 0, 10, true, nil)
+	end
+				
 })
 
 
