@@ -3,6 +3,7 @@ mobs:register_mob("banth:banth", {
 	passive = false,
 	reach = 2,
 	damage = 4,
+	sounds = {attack = "banth_snarl", war_cry = "banth_growl"},
 	attack_type = "dogfight",
 	hp_min = 22,
 	hp_max = 32,
