@@ -49,7 +49,24 @@ mobs:register_mob("banth:banth", {
 })
 
 
+--mobs:spawn_specific(name, nodes, neighbors, min_light, max_light,interval, chance, active_object_count, min_height, max_height, day_toggle)
+mobs:spawn_specific(
+	"banth:banth",
+	{"default:sand"},      -- } -- spawn banths in dry lands oaises
+	{"ethereal:dry_dirt"}, -- }
+	0,  -- }
+	20, -- } -- all light levels
+	30, -- interval (server ticks?)
+	100, -- chance: conditions are very specific, so high chance
+	2,
+	-10,
+	31000,
+	nil
+)
+
+--[[ old
 --mobs:register_spawn(name, nodes, max_light, min_light, chance, active_object_count, max_height, day_toggle)
-mobs:register_spawn("banth:banth", {"default:dirt_with_grass","default:stone", "default:sand"}, 20, 10, 750, 2, 31000, false)
+mobs:register_spawn("banth:banth", {"default:dirt_with_grass","ethereal:green_dirt","ethereal:dry_dirt","default:sand"}, 20, 10, 750, 2, 31000, false)
+--]]
 mobs:register_egg("banth:banth", "Banth", "default_apple.png", 1)
 
